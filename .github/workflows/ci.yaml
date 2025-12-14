@@ -3,7 +3,7 @@ name: CI Pipeline
 on: [push]
 
 jobs:
-build:
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -19,7 +19,7 @@ build:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        
+
     # Add a step to run the linter in the steps part of the ci.yaml file
     - name: Lint with Flake8
       run: flake8 . --count --select=E1,F4 --show-source --statistics
